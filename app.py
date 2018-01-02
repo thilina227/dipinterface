@@ -67,6 +67,12 @@ def remove(application):
     return r.text
 
 
+@app.route('/api/test')
+def test():
+    container_details = get_port_for_app("myapp", "1.0.0")
+    return jsonify(container_details)
+
+
 @app.route('/api/deploy', methods=['POST'])
 def deploy_file():
     if request.method == 'POST':
@@ -94,8 +100,8 @@ def deploy_file():
 
 
 def add_to_proxy(app_details):
-    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=localhost:' + app_details.get('port') + '&add=')
-    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=localhost:' + app_details.get('port') + '&down=')
+    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=localhost:' + str(app_details.get('port')) + '&add=')
+    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=localhost:' + str(app_details.get('port')) + '&down=')
 
 
 def run_container(appname, version):
@@ -219,16 +225,20 @@ def get_app_for_port(port):
 
 
 def get_port_for_app(appname, version):
-    with open('conf/app_ports') as f:
-        content = f.read().splitlines()
+    client = docker.from_env();
+    container_list = client.containers.list(all=True)
     i = 0
-    while i < len(content):
-        parts = content[i].split(',')
-        if parts[0] == appname and parts[1] == version:
-            return {'appname': parts[0], 'version': parts[1], 'port': str(parts[2])}
+    while i < len(container_list):
+        container = container_list[i]
+        tags = container.image.tags[0]
+        tag_parts = tags.split(':')
+        img_name = tag_parts[0]
+        img_version = tag_parts[1]
+        if appname == img_name and version == img_version:
+            port = list(container.attrs['NetworkSettings']['Ports'])[0].split('/')[0]
+            return {'appname': appname, 'version': version, 'port': int(port)}
         i = i + 1
-    print("couldn't find app for the port")
-    return {'appname': appname, 'version': version, 'port': ''}
+    return {'appname': appname, 'version': version, 'port': 0}
 
 
 def get_available_port():
