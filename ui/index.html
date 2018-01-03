@@ -87,19 +87,18 @@
                 $('#backend-list').html('');
                 $.get("/api/backends", function(data, status){
 			        var backendListHtml = '';
-			        var backends = data.split('\n');
+			        var backends = data;
 			         for (var i=0; i< backends.length; i++) {
-			            if(backends[i].length > 0) {
-			                var backendParts = backends[i].split(" ");
-			                var application = backendParts[1];
-			                var status = backendParts[backendParts.length-1];
-			                if (!status.includes("down")) {
-			                    status = '<b style="color:green;">UP</b>';
-			                } else {
-			                    status = '<b style="color:red;">DOWN</b>';
-			                }
-    			            backendListHtml += '<br/><li><span class="pull-left small"><h3><strong>'+application+'</strong>  <strong>'+status+'</strong></h3></span><span class="pull-right small"><a class="btn btn-small btn-success" width="30px" onClick="up(\''+application+'\')">Up</a><a class="btn btn-mini btn-inverse" onClick="down(\''+application+'\')">Down</a><a class="btn btn-mini btn-danger" onClick="remove(\''+application+'\')">Delete</a></span></li>';
-			            }
+                        var application = '127.0.0.1:' + backends[i].port;
+                        var status = backends[i].status;
+                        var appname = backends[i].appname;
+                        var version = backends[i].version;
+                        if (!status.includes("Down")) {
+                            status = '<b style="color:green;">UP</b>';
+                        } else {
+                            status = '<b style="color:red;">DOWN</b>';
+                        }
+                        backendListHtml += '<br/><li><span class="pull-left small"><h3><strong>' + appname + ' : ' +version+ '</strong>  <strong>'+status+'</strong></h3></span><span class="pull-right small"><a class="btn btn-small btn-success" width="30px" onClick="up(\''+application+'\')">Up</a><a class="btn btn-mini btn-inverse" onClick="down(\''+application+'\')">Down</a><a class="btn btn-mini btn-danger" onClick="remove(\''+application+'\')">Delete</a></span></li>';
 			         }
 			         $('#backend-list').html(backendListHtml);
                 });

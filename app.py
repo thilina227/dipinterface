@@ -33,12 +33,19 @@ def get_all_apps():
     backends = []
     while i < len(lines):
         if len(lines[i]) > 0:
-            parts = lines[i].split(' ')[1].split(':')
-            port = parts[1]
+            line_parts = lines[i].split(' ')
+            backend_parts = line_parts[1].split(':')
+            port = backend_parts[1]
+            status = line_parts[len(line_parts)-1]
+            if status == "down;":
+                status = "Down"
+            else:
+                status = "Up"
             app_details = get_app_for_port(port)
             backends.append({"appname": app_details.get('appname'),
                              "version": app_details.get('version'),
-                             "port": port})
+                             "port": port,
+                             "status": status})
         i = i + 1
     return jsonify(backends)
 
@@ -90,23 +97,28 @@ def deploy_file():
         file.save(os.path.join('workspace/' + appname + '/' + version, filename))
         # create docker file
         create_docker_file(appname, version)
+        # get an available port
+        port = get_available_port()
+        # reserve port
+        reserve_app_port(appname, version, port)
         # build image
         build_docker_image(appname, version)
         # clean workspace
         clean_assets(appname, version)
-        run_container(appname, version)
-        add_to_proxy(get_port_for_app(appname, version))
+        run_container(appname, version, port)
+        add_to_proxy(port)
         return 'file deployed successfully'
 
 
-def add_to_proxy(app_details):
-    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=localhost:' + str(app_details.get('port')) + '&add=')
-    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=localhost:' + str(app_details.get('port')) + '&down=')
+def add_to_proxy(port):
+    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=127.0.0.1:' + str(port) + '&add=')
+    requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=127.0.0.1:' + str(port) + '&down=')
 
 
-def run_container(appname, version):
+def run_container(appname, version, port):
     client = docker.from_env()
-    client.containers.run(appname + ':' + version, 'tomcat/bin/catalina.sh run', detach=True)
+    client.containers.run(appname + ':' + version, 'tomcat/bin/catalina.sh run', detach=True,
+                          ports={'8080/tcp': port})
 
 
 def copy_assets(appname, version):
@@ -138,7 +150,7 @@ def build_docker_image_by_command(appname, version):
 
 
 def create_docker_file(appname, version):
-    port = get_available_port()
+    # port = get_available_port()
     f = open('workspace/' + appname + '/' + version + '/Dockerfile', 'w')
     f.write('# Tomcat 8 customized\n')
     f.write('#')
@@ -151,11 +163,10 @@ def create_docker_file(appname, version):
     f.write('ADD *.war /tomcat/webapps\n')
     f.write('ENV JAVA_HOME /jre\n')
     f.write('#ENV JAVA_OPTS -Dport.shutdown=8065 -Dport.http=8060\n')
-    f.write('RUN sed "s/8080/' + str(port) + '/g" < /tomcat/conf/server.xml > /tmp/server.xml\n')
-    f.write('RUN cp /tmp/server.xml /tomcat/conf/server.xml\n')
-    f.write('EXPOSE ' + str(port))
+#    f.write('#RUN sed "s/8080/' + str(port) + '/g" < /tomcat/conf/server.xml > /tmp/server.xml\n')
+#    f.write('#RUN cp /tmp/server.xml /tomcat/conf/server.xml\n')
+    f.write('EXPOSE 8080')
     f.close()
-    reserve_app_port(appname, version, port)
 
 
 def get_docker_file(appname, version):
