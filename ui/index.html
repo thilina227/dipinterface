@@ -83,6 +83,18 @@
                 });
             }
 
+            function start(appname, version) {
+                $.get('/api/backends/start?appname=' + appname + '&version=' + version, function(data, status){
+			        loadapplications();
+                });
+            }
+
+            function stop(appname, version) {
+                $.get('/api/backends/stop?appname=' + appname + '&version=' + version, function(data, status){
+			        loadapplications();
+                });
+            }
+
             function loadapplications(){
                 $('#backend-list').html('');
                 $.get("/api/backends", function(data, status){
@@ -90,15 +102,21 @@
 			        var backends = data;
 			         for (var i=0; i< backends.length; i++) {
                         var application = '127.0.0.1:' + backends[i].port;
-                        var status = backends[i].status;
+                        var isConnected = backends[i].isConnected;
+                        var isRunning = backends[i].isRunning;
                         var appname = backends[i].appname;
                         var version = backends[i].version;
-                        if (!status.includes("Down")) {
-                            status = '<b style="color:green;">UP</b>';
+                        if (isConnected) {
+                            isConnected = '<b style="color:green;">Connected</b>';
                         } else {
-                            status = '<b style="color:red;">DOWN</b>';
+                            isConnected = '<b style="color:red;">Disconnected</b>';
                         }
-                        backendListHtml += '<br/><li><span class="pull-left small"><h3><strong>' + appname + ' : ' +version+ '</strong>  <strong>'+status+'</strong></h3></span><span class="pull-right small"><a class="btn btn-small btn-success" width="30px" onClick="up(\''+application+'\')">Up</a><a class="btn btn-mini btn-inverse" onClick="down(\''+application+'\')">Down</a><a class="btn btn-mini btn-danger" onClick="remove(\''+application+'\')">Delete</a></span></li>';
+                        if (isRunning) {
+                            isRunning = '<b style="color:green;">Running</b>';
+                        } else {
+                            isRunning = '<b style="color:red;">Stopped</b>';
+                        }
+                        backendListHtml += '<br/><li><span class="pull-left small"><h3><strong>' + appname + ' : ' +version+ '</strong>  <strong>'+isConnected+'</strong> <strong>'+isRunning+'</strong></h3></span><span class="pull-right small"><a class="btn btn-small btn-success" width="30px" onClick="up(\''+application+'\')">Connect</a><a class="btn btn-mini btn-warning" onClick="down(\''+application+'\')">Disconnect</a><a class="btn btn-small btn-info" onClick="start(\''+appname+'\', \''+version+'\')">Start</a><a class="btn btn-small btn-inverse" onClick="stop(\''+appname+'\', \''+version+'\')">Stop</a><a class="btn btn-mini btn-danger" onClick="remove(\''+application+'\')">Delete</a></span></li>';
 			         }
 			         $('#backend-list').html(backendListHtml);
                 });

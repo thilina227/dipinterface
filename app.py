@@ -27,6 +27,39 @@ def send_ui(path):
 
 @app.route('/api/backends')
 def get_all_apps():
+    apps = []
+    client = docker.from_env()
+    images = client.images.list(all=True)
+    j = 0
+    while j < len(images):
+        image = images[j]
+        if len(image.tags):
+            tag = image.tags[0]
+            tag_parts = tag.split(':')
+            appname = tag_parts[0]
+            version = tag_parts[1]
+            if appname != 'ubuntu':
+                running = is_running(tag_parts[0], tag_parts[1])
+                connected = is_connected(tag_parts[0], tag_parts[1])
+                apps.append({"appname": appname,
+                             "version": version,
+                             "port": get_port_for_running_app(appname, version)['port'],
+                             "isConnected": connected,
+                             "isRunning": running})
+        j = j + 1
+    return jsonify(apps)
+
+
+def is_connected(appname, version):
+    proxy_backends = get_all_proxy_connections()
+    for backend in proxy_backends:
+        if backend['appname'] == appname and backend['version'] == version:
+            return backend['isConnected']
+    return False
+
+
+# fetch backends from nginx proxy
+def get_all_proxy_connections():
     r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&verbose=')
     lines = r.text.split('\n')
     i = 0
@@ -36,18 +69,18 @@ def get_all_apps():
             line_parts = lines[i].split(' ')
             backend_parts = line_parts[1].split(':')
             port = backend_parts[1]
-            status = line_parts[len(line_parts)-1]
+            status = line_parts[len(line_parts) - 1]
             if status == "down;":
-                status = "Down"
+                connected = False
             else:
-                status = "Up"
+                connected = True
             app_details = get_app_for_port(port)
             backends.append({"appname": app_details.get('appname'),
                              "version": app_details.get('version'),
                              "port": port,
-                             "status": status})
+                             "isConnected": connected})
         i = i + 1
-    return jsonify(backends)
+    return backends
 
 
 @app.route('/api/backends/<application>/down')
@@ -70,14 +103,34 @@ def add(application):
 
 @app.route('/api/backends/<application>/remove')
 def remove(application):
+    appname = request.args.get('appname')
+    version = request.args.get('version')
+    terminate_container(appname, version)
     r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=' + application + '&remove=')
     return r.text
 
 
+@app.route('/api/backends/stop')
+def stop():
+    appname = request.args.get('appname')
+    version = request.args.get('version')
+    terminate_container(appname, version)
+    return "container stopped and removed"
+
+
+@app.route('/api/backends/start')
+def start():
+    appname = request.args.get('appname')
+    version = request.args.get('version')
+    port = get_port_for_stopped_app(appname, version)['port']
+    run_container(appname, version, port)
+    return "container started"
+
+
 @app.route('/api/test')
 def test():
-    container_details = get_port_for_app("myapp", "1.0.0")
-    return jsonify(container_details)
+    var = is_running("myapp", "1.0.0")
+    return "test"
 
 
 @app.route('/api/deploy', methods=['POST'])
@@ -136,6 +189,22 @@ def build_docker_image(appname, version):
     client.images.build(path='workspace/' + appname + '/' + version,
                         tag=appname + ':' + version,
                         rm=True)
+
+
+def terminate_container(appname, version):
+    client = docker.from_env()
+    containers = client.containers.list(all=True)
+    i = 0
+    while i < len(containers):
+        tag = containers[i].image.tags[0]
+        tag_parts = tag.split(":")
+        if appname == tag_parts[0] and version == tag_parts[1]:
+            # stop container
+            containers[i].kill()
+            containers[i].remove()
+            print("terminated " + appname + ":" + version)
+            break
+        i = i + 1
 
 
 # deprecated
@@ -235,7 +304,7 @@ def get_app_for_port(port):
     return {'appname': '', 'version': '', 'port': port}
 
 
-def get_port_for_app(appname, version):
+def get_port_for_running_app(appname, version):
     client = docker.from_env();
     container_list = client.containers.list(all=True)
     i = 0
@@ -246,10 +315,23 @@ def get_port_for_app(appname, version):
         img_name = tag_parts[0]
         img_version = tag_parts[1]
         if appname == img_name and version == img_version:
-            port = list(container.attrs['NetworkSettings']['Ports'])[0].split('/')[0]
+            port = container.attrs['NetworkSettings']['Ports']['8080/tcp'][0]['HostPort']
             return {'appname': appname, 'version': version, 'port': int(port)}
         i = i + 1
     return {'appname': appname, 'version': version, 'port': 0}
+
+
+def get_port_for_stopped_app(appname, version):
+    with open('conf/app_ports') as f:
+        content = f.read().splitlines()
+    i = 0
+    while i < len(content):
+        parts = content[i].split(',')
+        if parts[0] == appname and parts[1] == version:
+            return {'appname': parts[0], 'version': parts[1], 'port': parts[2]}
+        i = i + 1
+    print("couldn't find app for the port")
+    return {'appname': '', 'version': '', 'port': 0}
 
 
 def get_available_port():
@@ -267,6 +349,19 @@ def create_workspace(appname, version):
         os.makedirs('workspace/' + appname)
     if not os.path.exists('workspace/' + appname + '/' + version):
         os.makedirs('workspace/' + appname + '/' + version)
+
+
+def is_running(appname, version):
+    client = docker.from_env()
+    containers = client.containers.list(all=True)
+    i = 0
+    while i < len(containers):
+        tag = containers[i].image.tags[0]
+        tag_parts = tag.split(':')
+        if appname == tag_parts[0] and version == tag_parts[1]:
+            return True
+        i = i + 1
+    return False
 
 
 if __name__ == '__main__':
