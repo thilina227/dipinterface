@@ -71,8 +71,8 @@
                 });
             }
 
-            function remove(application){
-                $.get('/api/backends/'+application+'/remove', function(data, status){
+            function remove(application, appname, version){
+                $.get('/api/backends/'+application+'/remove?appname=' + appname + '&version=' + version, function(data, status){
 			        loadapplications();
                 });
             }
@@ -116,7 +116,7 @@
                         } else {
                             isRunning = '<b style="color:red;">Stopped</b>';
                         }
-                        backendListHtml += '<br/><li><span class="pull-left small"><h3><strong>' + appname + ' : ' +version+ '</strong>  <strong>'+isConnected+'</strong> <strong>'+isRunning+'</strong></h3></span><span class="pull-right small"><a class="btn btn-small btn-success" width="30px" onClick="up(\''+application+'\')">Connect</a><a class="btn btn-mini btn-warning" onClick="down(\''+application+'\')">Disconnect</a><a class="btn btn-small btn-info" onClick="start(\''+appname+'\', \''+version+'\')">Start</a><a class="btn btn-small btn-inverse" onClick="stop(\''+appname+'\', \''+version+'\')">Stop</a><a class="btn btn-mini btn-danger" onClick="remove(\''+application+'\')">Delete</a></span></li>';
+                        backendListHtml += '<br/><li><span class="pull-left small"><h3><strong>' + appname + ' : ' +version+ '</strong>  <strong>'+isConnected+'</strong> <strong>'+isRunning+'</strong></h3></span><span class="pull-right small"><a class="btn btn-small btn-success" width="30px" onClick="up(\''+application+'\')">Connect</a><a class="btn btn-mini btn-warning" onClick="down(\''+application+'\')">Disconnect</a><a class="btn btn-small btn-info" onClick="start(\''+appname+'\', \''+version+'\')">Start</a><a class="btn btn-small btn-inverse" onClick="stop(\''+appname+'\', \''+version+'\')">Stop</a><a class="btn btn-mini btn-danger" onClick="remove(\''+application+'\', \''+appname+'\', \''+version+'\')">Delete</a></span></li>';
 			         }
 			         $('#backend-list').html(backendListHtml);
                 });

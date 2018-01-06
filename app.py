@@ -58,6 +58,20 @@ def is_connected(appname, version):
     return False
 
 
+def does_connection_exists(port):
+    r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&verbose=')
+    lines = r.text.split('\n')
+    i = 0
+    while i < len(lines):
+        if len(lines[i]) > 0:
+            line_parts = lines[i].split(' ')
+            backend_parts = line_parts[1].split(':')
+            if port == backend_parts[1]:
+                return True
+        i = i + 1
+    return False
+
+
 # fetch backends from nginx proxy
 def get_all_proxy_connections():
     r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&verbose=')
@@ -91,7 +105,11 @@ def down(application):
 
 @app.route('/api/backends/<application>/up')
 def up(application):
-    r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=' + application + '&up=')
+    port = application.split(':')[1]
+    if does_connection_exists(port):
+        r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=' + application + '&up=')
+    else:
+        r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=' + application + '&add=')
     return r.text
 
 
@@ -107,6 +125,8 @@ def remove(application):
     version = request.args.get('version')
     terminate_container(appname, version)
     r = requests.get('http://127.0.0.1:10000/dynamic?upstream=backends&server=' + application + '&remove=')
+    terminate_image(appname, version)
+    release_app_port(appname, version, application.split(':')[1])
     return r.text
 
 
@@ -203,6 +223,21 @@ def terminate_container(appname, version):
             containers[i].kill()
             containers[i].remove()
             print("terminated " + appname + ":" + version)
+            break
+        i = i + 1
+
+
+def terminate_image(appname, version):
+    client = docker.from_env()
+    images = client.images.list(all=True)
+    i = 0
+    while i < len(images):
+        tag = images[i].tags[0]
+        tag_parts = tag.split(":")
+        if appname == tag_parts[0] and version == tag_parts[1]:
+            # remove image
+            client.images.remove(image=appname + ':' + version, force=True)
+            print("terminated image " + appname + ":" + version)
             break
         i = i + 1
 
