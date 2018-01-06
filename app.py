@@ -1,5 +1,4 @@
 from subprocess import PIPE, run
-from io import BytesIO
 from flask import Flask, request, send_from_directory, jsonify, redirect, url_for
 import os
 import requests
@@ -64,18 +63,18 @@ def get_all_apps():
     while j < len(images):
         image = images[j]
         if len(image.tags):
-            tag = image.tags[0]
-            tag_parts = tag.split(':')
-            appname = tag_parts[0]
-            version = tag_parts[1]
-            if appname != 'ubuntu':
-                running = is_running(tag_parts[0], tag_parts[1])
-                connected = is_connected(tag_parts[0], tag_parts[1])
-                apps.append({"appname": appname,
-                             "version": version,
-                             "port": get_port_for_running_app(appname, version)['port'],
-                             "isConnected": connected,
-                             "isRunning": running})
+            for tag in image.tags:
+                tag_parts = tag.split(':')
+                appname = tag_parts[0]
+                version = tag_parts[1]
+                if appname != 'ubuntu':
+                    running = is_running(tag_parts[0], tag_parts[1])
+                    connected = is_connected(tag_parts[0], tag_parts[1])
+                    apps.append({"appname": appname,
+                                 "version": version,
+                                 "port": get_port_for_stopped_app(appname, version)['port'],
+                                 "isConnected": connected,
+                                 "isRunning": running})
         j = j + 1
     return jsonify(apps)
 
@@ -246,7 +245,7 @@ def terminate_container(appname, version):
     containers = client.containers.list(all=True)
     i = 0
     while i < len(containers):
-        tag = containers[i].image.tags[0]
+        tag = containers[i].attrs['Config']['Image']
         tag_parts = tag.split(":")
         if appname == tag_parts[0] and version == tag_parts[1]:
             # stop container
@@ -304,26 +303,6 @@ def create_docker_file(appname, version):
     f.close()
 
 
-def get_docker_file(appname, version):
-    port = get_available_port()
-    docker_file = 'workspace/' + appname + '/' + version + '/Dockerfile \
-        # Tomcat 8 customized\n \
-        # \n \
-        # VERSION               0.0.1\n \
-        \n \
-        FROM      ubuntu\n \
-        LABEL Description="This image is used to run a customized tomcat server" Version="1.0"\n \
-        ADD tomcat /tomcat\n \
-        ADD jre /jre\n \
-        ADD *.war /tomcat/webapps\n \
-        ENV JAVA_HOME /jre\n \
-        #ENV JAVA_OPTS -Dport.shutdown=8065 -Dport.http=8060\n \
-        RUN sed "s/8080/' + str(port) + '/g" < /tomcat/conf/server.xml > /tmp/server.xml\n \
-        RUN cp /tmp/server.xml /tomcat/conf/server.xml\n \
-        EXPOSE ' + str(port)
-    return BytesIO(docker_file.encode('utf-8'))
-
-
 def reserve_app_port(appname, version, port):
     f = open('conf/app_ports', 'a')
     f.write(str(appname) + ',' + str(version) + ',' + str(port) + '\n')
@@ -337,8 +316,8 @@ def release_app_port(appname, version, port):
     i = 0
     while i < len(content):
         parts = content[i].split(',')
-        if not parts[0] == appname and parts[1] == version and parts[2] == str(port):
-            content_to_write = content[i]
+        if not (parts[0] == appname and parts[1] == version and parts[2] == str(port)):
+            content_to_write += content[i] + '\n'
         i = i + 1
     f = open('conf/app_ports', 'w')
     f.write(content_to_write)
@@ -368,23 +347,6 @@ def get_app_for_port(port):
         i = i + 1
     print("couldn't find app for the port")
     return {'appname': '', 'version': '', 'port': port}
-
-
-def get_port_for_running_app(appname, version):
-    client = docker.from_env();
-    container_list = client.containers.list(all=True)
-    i = 0
-    while i < len(container_list):
-        container = container_list[i]
-        tags = container.image.tags[0]
-        tag_parts = tags.split(':')
-        img_name = tag_parts[0]
-        img_version = tag_parts[1]
-        if appname == img_name and version == img_version:
-            port = container.attrs['NetworkSettings']['Ports']['8080/tcp'][0]['HostPort']
-            return {'appname': appname, 'version': version, 'port': int(port)}
-        i = i + 1
-    return {'appname': appname, 'version': version, 'port': 0}
 
 
 def get_port_for_stopped_app(appname, version):
@@ -422,7 +384,7 @@ def is_running(appname, version):
     containers = client.containers.list(all=True)
     i = 0
     while i < len(containers):
-        tag = containers[i].image.tags[0]
+        tag = containers[i].attrs['Config']['Image']
         tag_parts = tag.split(':')
         if appname == tag_parts[0] and version == tag_parts[1]:
             return True
