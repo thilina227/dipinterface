@@ -171,8 +171,9 @@ def stop():
 def start():
     appname = request.args.get('appname')
     version = request.args.get('version')
-    port = get_port_for_stopped_app(appname, version)['port']
-    run_container(appname, version, port)
+    if not is_running(appname, version):
+        port = get_port_for_stopped_app(appname, version)['port']
+        run_container(appname, version, port)
     return "container started"
 
 
@@ -262,13 +263,13 @@ def terminate_image(appname, version):
     i = 0
     while i < len(images):
         if len(images[i].tags) > 0:
-            tag = images[i].tags[0]
-            tag_parts = tag.split(":")
-            if appname == tag_parts[0] and version == tag_parts[1]:
-                # remove image
-                client.images.remove(image=appname + ':' + version, force=True)
-                print("terminated image " + appname + ":" + version)
-                break
+            for tag in images[i].tags:
+                tag_parts = tag.split(":")
+                if appname == tag_parts[0] and version == tag_parts[1]:
+                    # remove image
+                    client.images.remove(image=appname + ':' + version, force=True)
+                    print("terminated image " + appname + ":" + version)
+                    break
         i = i + 1
 
 
