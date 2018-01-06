@@ -30,7 +30,13 @@
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
                                     <div class="span8">
-                                        <input id="txtNewapplication" placeholder="" class="span8" type="text"/><a id="btnAdd" class="btn btn-small btn-primary span2">Add</a>
+                                        <form action="/ui/deploy" method="post" enctype="multipart/form-data">
+                                            <input id="filePackage" placeholder="version" name="file" class="span3" type="file"/>
+                                            <input id="txtNewAppName" placeholder="app name" name="appname" class="span2" type="text"/>
+                                            <input id="txtNewAppVersion" placeholder="version" name="version" class="span2" type="text"/>
+                                            <input type="submit" id="btnAdd" class="btn btn-small btn-primary span2" value="Deploy"/>
+                                        </form>
+
                                     </div>
                                 </div>
                                 <div class="btn-box-row row-fluid">
@@ -123,10 +129,22 @@
             }
 
             $('#btnAdd').click(function(){
-                var application = $('#txtNewapplication').val();
-                if(application.length>0){
-                    add(application);
+                if($('#filePackage').get(0).files.length === 0) {
+                    alert("No package provided")
+                    return false;
                 }
+
+                if($('#txtNewAppName').val().length == 0) {
+                    alert("No package name is provided")
+                    return false;
+                }
+
+                if($('#txtNewAppVersion').val().length == 0) {
+                    alert("No package version is provided")
+                    return false;
+                }
+
+                return true;
             });
         </script>
       

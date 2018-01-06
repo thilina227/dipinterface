@@ -1,6 +1,6 @@
 from subprocess import PIPE, run
 from io import BytesIO
-from flask import Flask, request, send_from_directory, jsonify
+from flask import Flask, request, send_from_directory, jsonify, redirect, url_for
 import os
 import requests
 import docker
@@ -23,6 +23,36 @@ def index():
 @app.route('/<path:path>')
 def send_ui(path):
     return send_from_directory('ui', path)
+
+
+@app.route('/ui/deploy', methods=['POST'])
+def deploy_file_from_ui():
+    if request.method == 'POST':
+        file = request.files['file']
+        if not request.form.get('version'):
+            return "version is empty"
+        if not request.form.get('appname'):
+            return "app package name is empty"
+        version = request.form.get('version')
+        appname = request.form.get('appname')
+        create_workspace(appname, version)
+        copy_assets(appname, version)
+        filename = secure_filename(file.filename)
+        # saving file to workspace
+        file.save(os.path.join('workspace/' + appname + '/' + version, filename))
+        # create docker file
+        create_docker_file(appname, version)
+        # get an available port
+        port = get_available_port()
+        # reserve port
+        reserve_app_port(appname, version, port)
+        # build image
+        build_docker_image(appname, version)
+        # clean workspace
+        clean_assets(appname, version)
+        run_container(appname, version, port)
+        add_to_proxy(port)
+        return redirect(url_for('index'))
 
 
 @app.route('/api/backends')
@@ -232,13 +262,14 @@ def terminate_image(appname, version):
     images = client.images.list(all=True)
     i = 0
     while i < len(images):
-        tag = images[i].tags[0]
-        tag_parts = tag.split(":")
-        if appname == tag_parts[0] and version == tag_parts[1]:
-            # remove image
-            client.images.remove(image=appname + ':' + version, force=True)
-            print("terminated image " + appname + ":" + version)
-            break
+        if len(images[i].tags) > 0:
+            tag = images[i].tags[0]
+            tag_parts = tag.split(":")
+            if appname == tag_parts[0] and version == tag_parts[1]:
+                # remove image
+                client.images.remove(image=appname + ':' + version, force=True)
+                print("terminated image " + appname + ":" + version)
+                break
         i = i + 1
 
 
