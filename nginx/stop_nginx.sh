@@ -1,4 +1,4 @@
 #!/bin/bash
 # stop nginx server
 
-./bin/nginx -s stop
+./bin/nginx -p . -s stop
