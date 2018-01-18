@@ -1,0 +1,439 @@
+2017/12/23 16:20:05 [emerg] 19205#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/config/upstream.conf" failed (2: No such file or directory) in /home/dev/applications/nginx/nginx-1.12.2/installed/config/nginx.conf:15
+2017/12/23 16:24:37 [emerg] 19241#0: invalid number of arguments in "proxy_pass" directive in /home/dev/applications/nginx/nginx-1.12.2/installed/config/nginx.conf:44
+2017/12/23 16:24:58 [notice] 19247#0: signal process started
+2017/12/23 16:26:31 [notice] 19275#0: signal process started
+2017/12/25 20:15:25 [error] 19278#0: *188 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/code/scripts/jquery.min.map" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /code/scripts/jquery.min.map HTTP/1.1", host: "localhost:8888"
+2017/12/25 20:15:40 [error] 19278#0: *188 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/code/scripts/jquery.min.map" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /code/scripts/jquery.min.map HTTP/1.1", host: "localhost:8888"
+2017/12/25 20:19:15 [error] 19278#0: *193 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/code/scripts/jquery.min.map" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /code/scripts/jquery.min.map HTTP/1.1", host: "localhost:8888"
+2017/12/25 20:21:40 [error] 19278#0: *200 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/code/scripts/jquery.min.map" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /code/scripts/jquery.min.map HTTP/1.1", host: "localhost:8888"
+2017/12/25 20:22:43 [error] 19278#0: *200 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/code/scripts/jquery.min.map" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /code/scripts/jquery.min.map HTTP/1.1", host: "localhost:8888"
+2017/12/25 20:25:01 [notice] 29812#0: signal process started
+2017/12/25 20:25:25 [error] 29815#0: *2 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/25 20:25:49 [error] 29815#0: *4 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/code/scripts/jquery.min.map" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /code/scripts/jquery.min.map HTTP/1.1", host: "localhost:8888"
+2017/12/25 20:53:17 [error] 29815#0: *5 open() "/home/dev/applications/nginx/nginx-1.12.2/installed/html/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8888", referrer: "http://localhost:8888/code/index.html"
+2017/12/26 19:18:26 [error] 29815#0: *124 server '+app+' is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server='+app+'&down= HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/26 20:48:52 [error] 29815#0: *133 host not found in upstream "'+app+'", client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server='+app+'&add= HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/26 20:50:04 [error] 29815#0: *137 host not found in upstream "'+app+'", client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server='+app+'&add= HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/26 20:50:48 [error] 29815#0: *139 host not found in upstream "'+app+'", client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server='+app+'&add= HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/26 20:59:20 [error] 29815#0: *181 server 127.0.0.1:8002 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8002&add= HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/26 21:22:02 [error] 29815#0: *252 server 127.0.0.1:8005 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8005&add= HTTP/1.1", host: "127.0.0.1:10000"
+2017/12/26 21:23:12 [error] 29815#0: *263 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /tomcat.css HTTP/1.1", upstream: "http://127.0.0.1:8005/tomcat.css", host: "localhost:8080", referrer: "http://localhost:8080/"
+2017/12/26 21:23:24 [error] 29815#0: *273 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8005/demo/", host: "localhost:8080"
+2017/12/26 21:23:24 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:27 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:39 [error] 29815#0: *273 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8005/demo/", host: "localhost:8080"
+2017/12/26 21:23:50 [error] 29815#0: *273 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8005/demo/", host: "localhost:8080"
+2017/12/26 21:23:50 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:23:58 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:58 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:23:59 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:00 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8001/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:01 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:10 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:24:10 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8001/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:10 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:24:10 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8001/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:10 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:24:10 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8001/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:11 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:24:11 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8001/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:11 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:24:11 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8001/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:19 [error] 29815#0: *273 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8001/demo/", host: "localhost:8080"
+2017/12/26 21:24:29 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:29 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:31 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:31 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:32 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:32 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:24:32 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:24:32 [error] 29815#0: *273 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/26 21:29:54 [emerg] 6080#0: invalid parameter "5000" in /home/dev/applications/nginx/nginx-1.12.2/installed/config/nginx.conf:20
+2017/12/26 21:30:17 [notice] 6089#0: signal process started
+2017/12/26 21:31:10 [notice] 6112#0: signal process started
+2017/12/26 21:33:15 [notice] 6135#0: signal process started
+2017/12/26 21:36:04 [error] 6138#0: *46 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8003/demo/", host: "localhost:8080"
+2017/12/26 21:46:06 [error] 6138#0: *124 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8003/demo/", host: "localhost:8080"
+2017/12/26 21:46:06 [error] 6138#0: *124 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 21:46:18 [error] 6138#0: *124 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8003/demo/", host: "localhost:8080"
+2017/12/26 22:28:06 [error] 6138#0: *157 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8003/demo/", host: "localhost:8080"
+2017/12/26 22:28:06 [error] 6138#0: *157 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/26 22:28:06 [error] 6138#0: *157 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo/"
+2017/12/28 23:24:58 [error] 6138#0: *235 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://backends/", host: "localhost:8080"
+2017/12/29 16:37:23 [error] 6138#0: *275 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /api/uploader HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader", host: "localhost:8888"
+2017/12/29 16:38:49 [error] 6138#0: *282 client intended to send too large body: 4512286 bytes, client: 127.0.0.1, server: , request: "PUT /api/uploader?version=1.0.0 HTTP/1.1", host: "localhost:8888"
+2017/12/29 16:41:01 [notice] 26457#0: signal process started
+2017/12/29 16:41:18 [error] 26460#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "PUT /api/uploader?version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader?version=1.0.0", host: "localhost:8888"
+2017/12/29 16:41:44 [error] 26460#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "HEAD /api/uploader?version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader?version=1.0.0", host: "localhost:8888"
+2017/12/29 16:44:33 [error] 26460#0: *5 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader?version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader?version=1.0.0", host: "localhost:8888"
+2017/12/29 16:54:29 [error] 26460#0: *7 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader?version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader?version=1.0.0", host: "localhost:8888"
+2017/12/29 16:54:35 [error] 26460#0: *9 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader?version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader?version=1.0.0", host: "localhost:8888"
+2017/12/29 16:58:29 [error] 26460#0: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader?version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader?version=1.0.0", host: "localhost:8888"
+2017/12/29 17:01:00 [error] 26460#0: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader", host: "localhost:8888"
+2017/12/29 17:01:31 [error] 26460#0: *15 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader", host: "localhost:8888"
+2017/12/29 17:01:57 [error] 26460#0: *17 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/uploader HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader", host: "localhost:8888"
+2017/12/29 17:05:44 [error] 26460#0: *23 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/uploader HTTP/1.1", upstream: "http://127.0.0.1:5000/api/uploader", host: "localhost:8888"
+2017/12/29 21:23:36 [error] 26460#0: *37 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp", host: "localhost:8888"
+2017/12/30 11:04:50 [error] 26460#0: *85 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/30 11:42:32 [error] 26460#0: *177 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2017/12/30 12:19:57 [error] 26460#0: *207 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/30 12:22:28 [notice] 3765#0: signal process started
+2017/12/30 12:33:13 [error] 3768#0: *5 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/30 12:34:21 [error] 3768#0: *7 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/30 12:35:02 [error] 3768#0: *9 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/30 12:36:34 [error] 3768#0: *11 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/31 17:51:53 [error] 3768#0: *111 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2017/12/31 17:52:02 [error] 3768#0: *113 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/01 23:38:15 [error] 3768#0: *248 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/02 19:08:27 [notice] 5318#0: signal process started
+2018/01/02 19:08:30 [emerg] 5319#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/02 19:08:30 [emerg] 5319#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/02 19:08:30 [emerg] 5319#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/02 19:08:30 [alert] 3767#0: worker process 3768 exited on signal 9
+2018/01/02 19:08:30 [alert] 3767#0: shared memory zone "backends" was locked by 3768
+2018/01/02 19:08:40 [notice] 5322#0: signal process started
+2018/01/02 19:08:47 [notice] 5328#0: signal process started
+2018/01/02 19:08:49 [notice] 5329#0: signal process started
+2018/01/02 19:08:49 [error] 5329#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/02 19:12:35 [notice] 6063#0: signal process started
+2018/01/02 19:12:37 [notice] 6064#0: signal process started
+2018/01/02 19:12:37 [alert] 5333#0: worker process 5334 exited on signal 9
+2018/01/02 19:12:37 [alert] 5333#0: shared memory zone "backends" was locked by 5334
+2018/01/02 19:12:38 [notice] 6065#0: signal process started
+2018/01/02 19:12:38 [error] 6065#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/02 19:16:00 [error] 6070#0: *1 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/02 21:55:02 [error] 6070#0: *36 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/02 21:56:13 [error] 6070#0: *36 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/02 22:13:03 [error] 6070#0: *36 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/02 22:54:23 [error] 6070#0: *55 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/02 23:16:23 [error] 6070#0: *65 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/02 23:33:49 [error] 6070#0: *65 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/02 23:47:39 [error] 6070#0: *99 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/03 00:19:22 [notice] 11641#0: signal process started
+2018/01/03 00:19:23 [notice] 11642#0: signal process started
+2018/01/03 00:19:24 [notice] 11643#0: signal process started
+2018/01/03 00:19:24 [alert] 6069#0: worker process 6070 exited on signal 9
+2018/01/03 00:19:24 [alert] 6069#0: shared memory zone "backends" was locked by 6070
+2018/01/03 00:19:26 [notice] 11644#0: signal process started
+2018/01/03 00:19:26 [error] 11644#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:19:27 [notice] 11645#0: signal process started
+2018/01/03 00:19:27 [error] 11645#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:19:36 [error] 11648#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/03 00:19:41 [error] 11648#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/03 00:19:50 [emerg] 11654#0: still could not bind()
+2018/01/03 00:19:56 [notice] 11655#0: signal process started
+2018/01/03 00:19:58 [notice] 11656#0: signal process started
+2018/01/03 00:19:58 [error] 11656#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:19:59 [notice] 11657#0: signal process started
+2018/01/03 00:19:59 [error] 11657#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:20:06 [error] 11660#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/03 00:20:26 [error] 11660#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/03 00:20:36 [notice] 11671#0: signal process started
+2018/01/03 00:20:38 [notice] 11672#0: signal process started
+2018/01/03 00:20:38 [error] 11672#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:21:19 [notice] 11678#0: signal process started
+2018/01/03 00:21:19 [error] 11678#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:21:39 [error] 11681#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/03 00:23:23 [error] 11681#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "POST /api/deploy?name=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/deploy?name=myapp&version=1.0.0", host: "localhost:8888"
+2018/01/03 00:26:43 [notice] 11746#0: signal process started
+2018/01/03 00:26:45 [notice] 11747#0: signal process started
+2018/01/03 00:26:45 [error] 11747#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:27:08 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:10 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:11 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:11 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:11 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:11 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:12 [error] 11750#0: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/03 00:27:31 [error] 11750#0: *27 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888", referrer: "http://localhost:8888/"
+2018/01/03 00:31:07 [notice] 12642#0: signal process started
+2018/01/03 00:31:09 [notice] 12645#0: signal process started
+2018/01/03 00:31:09 [alert] 11749#0: worker process 11750 exited on signal 9
+2018/01/03 00:31:09 [alert] 11749#0: shared memory zone "backends" was locked by 11750
+2018/01/03 00:31:10 [notice] 12646#0: signal process started
+2018/01/03 00:31:10 [error] 12646#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:35:39 [notice] 13229#0: signal process started
+2018/01/03 00:35:41 [notice] 13231#0: signal process started
+2018/01/03 00:35:41 [alert] 12648#0: worker process 12649 exited on signal 9
+2018/01/03 00:35:41 [alert] 12648#0: shared memory zone "backends" was locked by 12649
+2018/01/03 00:35:42 [notice] 13232#0: signal process started
+2018/01/03 00:35:42 [error] 13232#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:36:57 [notice] 13266#0: signal process started
+2018/01/03 00:36:58 [notice] 13267#0: signal process started
+2018/01/03 00:36:59 [notice] 13268#0: signal process started
+2018/01/03 00:36:59 [alert] 13234#0: worker process 13235 exited on signal 9
+2018/01/03 00:36:59 [alert] 13234#0: shared memory zone "backends" was locked by 13235
+2018/01/03 00:37:00 [notice] 13269#0: signal process started
+2018/01/03 00:37:00 [error] 13269#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:38:59 [notice] 13283#0: signal process started
+2018/01/03 00:39:00 [notice] 13284#0: signal process started
+2018/01/03 00:39:00 [error] 13284#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:41:30 [notice] 13331#0: signal process started
+2018/01/03 00:41:31 [notice] 13332#0: signal process started
+2018/01/03 00:41:32 [notice] 13333#0: signal process started
+2018/01/03 00:41:32 [notice] 13334#0: signal process started
+2018/01/03 00:41:33 [notice] 13335#0: signal process started
+2018/01/03 00:41:34 [notice] 13336#0: signal process started
+2018/01/03 00:41:35 [notice] 13337#0: signal process started
+2018/01/03 00:41:35 [alert] 13286#0: worker process 13287 exited on signal 9
+2018/01/03 00:41:35 [alert] 13286#0: shared memory zone "backends" was locked by 13287
+2018/01/03 00:41:36 [notice] 13338#0: signal process started
+2018/01/03 00:41:36 [error] 13338#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:41:37 [notice] 13339#0: signal process started
+2018/01/03 00:41:37 [error] 13339#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 00:41:38 [notice] 13340#0: signal process started
+2018/01/03 00:41:38 [error] 13340#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 20:24:58 [notice] 16162#0: signal process started
+2018/01/03 20:25:00 [notice] 16163#0: signal process started
+2018/01/03 20:25:00 [notice] 16164#0: signal process started
+2018/01/03 20:25:01 [notice] 16165#0: signal process started
+2018/01/03 20:25:02 [notice] 16166#0: signal process started
+2018/01/03 20:25:03 [notice] 16167#0: signal process started
+2018/01/03 20:25:03 [notice] 16168#0: signal process started
+2018/01/03 20:25:04 [notice] 16169#0: signal process started
+2018/01/03 20:25:04 [alert] 13342#0: worker process 13343 exited on signal 9
+2018/01/03 20:25:04 [alert] 13342#0: shared memory zone "backends" was locked by 13343
+2018/01/03 20:25:05 [notice] 16172#0: signal process started
+2018/01/03 20:25:05 [error] 16172#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 20:25:06 [notice] 16174#0: signal process started
+2018/01/03 20:25:06 [error] 16174#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 20:37:35 [error] 16177#0: *3 server  is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&verbose=&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/03 20:38:08 [error] 16177#0: *4 server 127.0.0.1:8002= is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8002=&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/03 20:39:58 [error] 16177#0: *8 server 127.0.0.1:8002= is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8002=&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/03 20:40:09 [error] 16177#0: *9 server 127.0.0.1:8002= is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8002=&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/03 20:41:20 [error] 16177#0: *12 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://backends/", host: "localhost:8080"
+2018/01/03 22:06:43 [notice] 18797#0: signal process started
+2018/01/03 22:06:44 [notice] 18798#0: signal process started
+2018/01/03 22:06:45 [notice] 18799#0: signal process started
+2018/01/03 22:06:46 [notice] 18800#0: signal process started
+2018/01/03 22:06:46 [notice] 18801#0: signal process started
+2018/01/03 22:06:46 [alert] 16176#0: worker process 16177 exited on signal 9
+2018/01/03 22:06:46 [alert] 16176#0: shared memory zone "backends" was locked by 16177
+2018/01/03 22:06:47 [notice] 18802#0: signal process started
+2018/01/03 22:06:47 [error] 18802#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 22:06:48 [notice] 18803#0: signal process started
+2018/01/03 22:06:48 [error] 18803#0: open() "/home/dev/applications/nginx/nginx-1.12.2/installed/nginx.pid" failed (2: No such file or directory)
+2018/01/03 22:28:40 [error] 18806#0: *18 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/04 11:41:15 [error] 18806#0: *149 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/04 11:48:14 [error] 18806#0: *149 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/04 19:39:16 [error] 18806#0: *160 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/04 19:41:28 [error] 18806#0: *160 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/04 20:07:06 [error] 18806#0: *163 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/test HTTP/1.1", upstream: "http://127.0.0.1:5000/api/test", host: "localhost:8888"
+2018/01/05 18:51:08 [error] 18806#0: *177 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends2 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends2", host: "localhost:8888"
+2018/01/05 19:13:53 [error] 18806#0: *187 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends2 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends2", host: "localhost:8888"
+2018/01/05 20:46:54 [error] 18806#0: *190 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends2 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends2", host: "localhost:8888"
+2018/01/05 22:40:57 [error] 18806#0: *209 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/05 22:41:37 [error] 18806#0: *226 server 127.0.0.1:8080 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8080&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/05 22:41:39 [error] 18806#0: *231 server 127.0.0.1:8080 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8080&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/05 22:41:40 [error] 18806#0: *236 server 127.0.0.1:8080 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8080&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/05 23:15:31 [error] 18806#0: *248 server 127.0.0.1:8080 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8080&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/05 23:50:30 [error] 18806#0: *251 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888", referrer: "http://localhost:8888/"
+2018/01/06 00:13:37 [error] 18806#0: *254 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888", referrer: "http://localhost:8888/"
+2018/01/06 00:13:58 [error] 18806#0: *273 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 00:27:32 [error] 18806#0: *288 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 00:28:28 [error] 18806#0: *292 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 00:29:23 [error] 18806#0: *293 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 00:29:51 [error] 18806#0: *295 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 00:36:13 [error] 18806#0: *324 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 00:36:30 [error] 18806#0: *348 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 02:44:34 [error] 18806#0: *667 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:5000/", host: "localhost:8888"
+2018/01/06 02:57:35 [error] 18806#0: *769 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo001/", host: "localhost:8080"
+2018/01/06 02:57:44 [error] 18806#0: *778 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://127.0.0.1:8311/demo001/", host: "localhost:8080"
+2018/01/06 02:57:44 [error] 18806#0: *778 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:44 [error] 18806#0: *778 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:49 [error] 18806#0: *778 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo001/", host: "localhost:8080"
+2018/01/06 02:57:49 [error] 18806#0: *778 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:49 [error] 18806#0: *778 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:50 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:50 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:51 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:51 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:51 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:51 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:51 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:51 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:52 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:52 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:52 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:52 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:53 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:53 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:53 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:53 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:53 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:53 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:54 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:54 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:54 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:54 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:57:54 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 02:57:54 [error] 18806#0: *784 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://backends/favicon.ico", host: "localhost:8080", referrer: "http://localhost:8080/demo001/"
+2018/01/06 02:58:02 [error] 18806#0: *785 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo001/", host: "localhost:8080"
+2018/01/06 02:58:02 [error] 18806#0: *785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://backends/demo001/", host: "localhost:8080"
+2018/01/06 03:04:22 [error] 18806#0: *851 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo001/", host: "localhost:8080"
+2018/01/06 03:15:52 [error] 18806#0: *879 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:15:55 [error] 18806#0: *883 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:15:56 [error] 18806#0: *887 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:16:22 [error] 18806#0: *891 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:16:24 [error] 18806#0: *895 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:16:25 [error] 18806#0: *899 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&down= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:16:26 [error] 18806#0: *903 server 127.0.0.1:8311 is not found. ngx_dynamic_upstream_op_update_param:428, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8311&up= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 03:30:19 [error] 18806#0: *927 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8311/remove?appname=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8311/remove?appname=myapp&version=1.0.0", host: "localhost:8888", referrer: "http://localhost:8888/"
+2018/01/06 03:47:48 [error] 18806#0: *960 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8311/remove?appname=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8311/remove?appname=myapp&version=1.0.0", host: "localhost:8888", referrer: "http://localhost:8888/"
+2018/01/06 10:58:00 [error] 18806#0: *1035 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:0/remove?appname=myapp&version=1.0.0 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:0/remove?appname=myapp&version=1.0.0", host: "localhost:8888", referrer: "http://localhost:8888/"
+2018/01/06 11:22:26 [error] 18806#0: *1067 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo001/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo001/", host: "localhost:8080"
+2018/01/06 11:36:57 [error] 18806#0: *1163 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo HTTP/1.1", upstream: "http://127.0.0.1:8312/demo", host: "localhost:8080"
+2018/01/06 11:37:13 [error] 18806#0: *1163 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 11:37:13 [error] 18806#0: *1163 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 11:40:54 [error] 18806#0: *1194 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.3 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.3", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 11:42:36 [error] 18806#0: *1197 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /index HTTP/1.1", upstream: "http://127.0.0.1:5000/index", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 11:57:40 [error] 18806#0: *1327 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:03:29 [error] 18806#0: *1327 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:04:13 [error] 18806#0: *1365 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:04:55 [error] 18806#0: *1372 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /index HTTP/1.1", upstream: "http://127.0.0.1:5000/index", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:10:42 [error] 18806#0: *1509 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/start?appname=myapp&version=1.0.2 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/start?appname=myapp&version=1.0.2", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:11:19 [error] 18806#0: *1516 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /index HTTP/1.1", upstream: "http://127.0.0.1:5000/index", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:11:52 [error] 18806#0: *1527 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/start?appname=myapp&version=1.0.2 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/start?appname=myapp&version=1.0.2", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:11:56 [error] 18806#0: *1527 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /index HTTP/1.1", upstream: "http://127.0.0.1:5000/index", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:25:35 [error] 18806#0: *1536 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /index HTTP/1.1", upstream: "http://127.0.0.1:5000/index", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:27:28 [error] 18806#0: *1563 server 127.0.0.1:32769 is not found. ngx_dynamic_upstream_op_remove:362, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:32769&remove= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:27:30 [error] 18806#0: *1568 server 127.0.0.1:0 is not found. ngx_dynamic_upstream_op_remove:362, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:0&remove= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:28:15 [error] 18806#0: *1573 server 127.0.0.1:8301 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8301&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:28:54 [error] 18806#0: *1599 server 127.0.0.1:8302 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8302&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:31:00 [error] 18806#0: *1605 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:33:08 [error] 18806#0: *1605 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/stop?appname=myapp&version=1.0.2 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/stop?appname=myapp&version=1.0.2", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 12:34:31 [error] 18806#0: *1700 invalid port in upstream "127.0.0.1:0", client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:0&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:34:35 [error] 18806#0: *1706 invalid port in upstream "127.0.0.1:0", client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:0&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:35:26 [error] 18806#0: *1712 invalid port in upstream "127.0.0.1:0", client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:0&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 12:36:47 [error] 18806#0: *1720 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:43:02 [error] 18806#0: *1720 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:43:12 [error] 18806#0: *1735 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 12:43:12 [error] 18806#0: *1735 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8301/demo/", host: "localhost:8080"
+2018/01/06 12:43:12 [error] 18806#0: *1735 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:43:51 [error] 18806#0: *1785 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 12:43:51 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:43:56 [error] 18806#0: *1785 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8301/demo/", host: "localhost:8080"
+2018/01/06 12:43:56 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:43:57 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:43:58 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:44:02 [error] 18806#0: *1785 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 12:44:02 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:44:06 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:44:06 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:44:06 [error] 18806#0: *1785 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:47:15 [error] 18806#0: *1815 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:47:41 [error] 18806#0: *1815 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:49:12 [error] 18806#0: *1823 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends", host: "localhost:8888"
+2018/01/06 12:53:13 [error] 18806#0: *1866 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8301/demo/", host: "localhost:8080"
+2018/01/06 12:53:13 [error] 18806#0: *1866 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 12:53:13 [error] 18806#0: *1866 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:14 [error] 18806#0: *1866 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:20 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:21 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:21 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:21 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:22 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:22 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:23 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:23 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:23 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:23 [error] 18806#0: *1874 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:25 [error] 18806#0: *1875 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 12:53:30 [error] 18806#0: *1875 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:31 [error] 18806#0: *1875 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:53:42 [error] 18806#0: *1875 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 12:53:42 [error] 18806#0: *1875 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://backends/demo/", host: "localhost:8080"
+2018/01/06 12:59:35 [error] 18806#0: *1979 server 127.0.0.1:8302 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8302&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:02:36 [error] 18806#0: *1985 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.1 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.1", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 13:03:59 [error] 18806#0: *2012 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8303/demo/", host: "localhost:8080"
+2018/01/06 13:03:59 [error] 18806#0: *2012 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 13:37:24 [error] 18806#0: *2033 server 127.0.0.1:8302 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8302&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:38:49 [error] 18806#0: *2039 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.1 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.1", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 13:43:06 [error] 18806#0: *2105 server 127.0.0.1:8302 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8302&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:45:16 [error] 18806#0: *2111 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.1 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8301/remove?appname=myapp&version=1.0.1", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 13:45:32 [error] 18806#0: *2125 server 127.0.0.1:8303 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8303&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:47:18 [error] 18806#0: *2175 server 127.0.0.1:8301 already exists in upstream. ngx_dynamic_upstream_op_add:245, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:8301&add= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:51:05 [error] 18806#0: *2286 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 13:56:31 [error] 18806#0: *2332 server 127.0.0.1:0 is not found. ngx_dynamic_upstream_op_remove:362, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:0&remove= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:56:34 [error] 18806#0: *2337 server 127.0.0.1:0 is not found. ngx_dynamic_upstream_op_remove:362, client: 127.0.0.1, server: , request: "GET /dynamic?upstream=backends&server=127.0.0.1:0&remove= HTTP/1.1", host: "127.0.0.1:10000"
+2018/01/06 13:57:31 [error] 18806#0: *2345 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/ HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/", host: "localhost:8080"
+2018/01/06 15:57:55 [error] 18806#0: *2414 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /api/backends/127.0.0.1:8302/remove?appname=testapp&version=1.0.1 HTTP/1.1", upstream: "http://127.0.0.1:5000/api/backends/127.0.0.1:8302/remove?appname=testapp&version=1.0.1", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 17:27:51 [error] 18806#0: *2427 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /index HTTP/1.1", upstream: "http://127.0.0.1:5000/index", host: "localhost:8888", referrer: "http://localhost:8888/index"
+2018/01/06 17:55:09 [error] 18806#0: *2586 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: , request: "GET /demo/health HTTP/1.1", upstream: "http://127.0.0.1:8312/demo/health", host: "localhost:8080"
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8888 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:10000 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: bind() to 0.0.0.0:8080 failed (98: Address already in use)
+2018/01/19 01:07:57 [emerg] 5134#0: still could not bind()
+2018/01/19 01:08:11 [notice] 5138#0: signal process started
+2018/01/19 01:08:24 [notice] 5142#0: signal process started
+2018/01/19 01:10:51 [notice] 5167#0: signal process started
+2018/01/19 01:12:18 [notice] 5196#0: signal process started
