@@ -1,4 +1,3 @@
-from subprocess import PIPE, run
 from flask import Flask, request, send_from_directory, jsonify, redirect, url_for
 import os
 import requests
@@ -271,17 +270,6 @@ def terminate_image(appname, version):
                     print("terminated image " + appname + ":" + version)
                     break
         i = i + 1
-
-
-# deprecated
-def build_docker_image_by_command(appname, version):
-    build_dir = 'workspace/' + appname + '/' + version
-    print("build dir:  " + build_dir)
-    build_cmd = ['docker', 'build', build_dir, '-t', appname + ':' + version]
-    build_result = run(build_cmd, stdout=PIPE, stderr=PIPE, universal_newlines=True)
-    print("build output: " + build_result.stdout)
-    print("build error: " + build_result.stderr)
-    print("built docker image: " + appname + version)
 
 
 def create_docker_file(appname, version):
