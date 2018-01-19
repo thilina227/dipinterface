@@ -283,7 +283,7 @@ def create_docker_file(appname, version):
     f.write('LABEL Description="This image is used to run a customized tomcat server" Version="1.0"\n')
     f.write('ADD tomcat /tomcat\n')
     f.write('ADD jre /jre\n')
-    f.write('ADD *.war /tomcat/webapps\n')
+    f.write('ADD *.war /tomcat/webapps/\n')
     f.write('ENV JAVA_HOME /jre\n')
     f.write('#ENV JAVA_OPTS -Dport.shutdown=8065 -Dport.http=8060\n')
 #    f.write('#RUN sed "s/8080/' + str(port) + '/g" < /tomcat/conf/server.xml > /tmp/server.xml\n')
