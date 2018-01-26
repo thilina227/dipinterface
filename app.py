@@ -2,6 +2,7 @@ from flask import Flask, request, send_from_directory, jsonify, redirect, url_fo
 import os
 import requests
 import docker
+import json
 from werkzeug.utils import secure_filename
 from distutils.dir_util import copy_tree, remove_tree
 
@@ -53,7 +54,38 @@ def deploy_file_from_ui():
         return redirect(url_for('index'))
 
 
+@app.route('/api/activate', methods=['GET'])
+def activate():
+    if request.method == 'GET':
+        if not request.args.get('version'):
+            return "version is empty"
+        if not request.args.get('appname'):
+            return "app package name is empty"
+        version = request.args.get('version')
+        appname = request.args.get('appname')
+
+        # start and connect app to proxy
+        port = get_port_for_stopped_app(appname, version)['port']
+        if not is_running(appname, version):
+            print("Starting application:" + appname + ":" + version)
+            run_container(appname, version, port)
+        up("127.0.0.1:" + port)
+
+        # down other applications
+        applications = get_all_apps()
+        print("Disconnecting other applications")
+        for application in applications:
+            if (not application['appname'] == appname) and (not application['version'] == version):
+                down("127.0.0.1:" + application.port)
+        return "activated " + appname + " " + version
+
+
 @app.route('/api/backends')
+def backends():
+    return jsonify(get_all_apps())
+
+
+# retrieve all available apps
 def get_all_apps():
     apps = []
     client = docker.from_env()
@@ -75,7 +107,7 @@ def get_all_apps():
                                  "isConnected": connected,
                                  "isRunning": running})
         j = j + 1
-    return jsonify(apps)
+    return apps
 
 
 def is_connected(appname, version):
