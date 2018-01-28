@@ -70,19 +70,35 @@ def activate():
             print("Starting application:" + appname + ":" + version)
             run_container(appname, version, port)
         up("127.0.0.1:" + port)
-
         # down other applications
         applications = get_all_apps()
         print("Disconnecting other applications")
         for application in applications:
-            if (not application['appname'] == appname) and (not application['version'] == version):
-                down("127.0.0.1:" + application.port)
+            if (application['appname'] != appname) or (application['version'] != version):
+                down("127.0.0.1:" + application['port'])
         return "activated " + appname + " " + version
 
 
 @app.route('/api/backends')
 def backends():
     return jsonify(get_all_apps())
+
+
+@app.route('/api/apps/<appname>/<version>/status')
+def get_app_status(appname, version):
+    if not request.args.get('health_route'):
+        return "health_route is empty"
+    health_route = request.args.get('health_route')
+    port = get_port_for_stopped_app(appname, version)['port']
+    # send a get request to the app's health route, timeout for 3 seconds
+    try:
+        r = requests.get('http://127.0.0.1:' + port + health_route, verify=False, timeout=3)
+    except requests.exceptions.ConnectionError:
+        return jsonify({'status': 'down', 'code': 500, 'err': 'Connection refused'})
+    if r.status_code == 200:
+        return jsonify({'status': 'up', 'code': r.status_code})
+    else:
+        return jsonify({'status': 'down', 'code': r.status_code})
 
 
 # retrieve all available apps
